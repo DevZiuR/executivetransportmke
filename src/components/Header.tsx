@@ -3,7 +3,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
 
-export const BOOKING_URL = "https://smooveluxurybooking.as.me/schedule/b24e2156";
+export const BOOKING_URL = "#book";
 
 const cities = [
   {
@@ -13,34 +13,34 @@ const cities = [
     count: "Our full fleet",
   },
   {
-    label: "New York",
-    value: "New York",
-    image: "https://www.bu.edu/admissions/files/2018/07/17-2005-AERIALS-101-cropped-e1535295662889-1200x675.jpg",
-    count: "NYC & Tri-State",
+    label: "Milwaukee",
+    value: "Milwaukee",
+    image: "https://images.unsplash.com/photo-1572985025258-3f165ead46a0?auto=format&fit=crop&w=1200&q=80",
+    count: "Milwaukee & Surrounding",
   },
   {
-    label: "Miami",
-    value: "Miami",
-    image: "https://www.jetbluevacations.com/cdn-cgi/image/f=auto,width=1920,height=1080/https://www.jetbluevacations.com/media/MIA_downtown_miami_38d2ff7562/MIA_downtown_miami_38d2ff7562.jpg",
-    count: "South Florida",
+    label: "Madison",
+    value: "Madison",
+    image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1200&q=80",
+    count: "Greater Madison Area",
   },
   {
-    label: "Atlanta",
-    value: "Atlanta",
-    image: "https://media.cntraveler.com/photos/68d58043d2572d5127695fe6/16:9/w_2992,h_1683,c_limit/092525-Unwritten-Rules-Atlanta-GettyImages-1365974686webres-final.jpg",
-    count: "Metro Atlanta",
+    label: "Chicago",
+    value: "Chicago",
+    image: "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80",
+    count: "Chicagoland & Regional",
   },
   {
     label: "Nationwide",
     value: "Nationwide",
     image: "https://www.civitatis.com/blog/wp-content/uploads/2025/01/los-angeles-scaled.jpg",
-    count: "All 50 states + countries",
+    count: "By Request & Long Distance",
   },
 ];
 
 const navLinks = [
   /// { name: "Reserve Fleet", path: "/fleet", hasDropdown: true },
-  { name: "Our Fleet", id: "fleet" },
+  { name: "EXPERIENCES", id: "fleet" },
   { name: "PhotoShoots", id: "photoshoots" },
   { name: "Policies", id: "policies" },
   { name: "About", id: "about" },
@@ -123,6 +123,18 @@ const Header = () => {
     }
   }, [navigate]);
 
+  const handleBookingClick = useCallback(() => {
+    setIsOpen(false);
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        scrollToSection("book");
+      }, 100);
+    } else {
+      scrollToSection("book");
+    }
+  }, [navigate, location.pathname, scrollToSection]);
+
   const isHomePage = location.pathname === "/";
 
   return (
@@ -147,7 +159,7 @@ const Header = () => {
           >
             <img
               src="/images/logo.png"
-              alt="Smoove Luxury Transportation"
+              alt="Executive Transport MKE"
               className="h-14 sm:h-18 md:h-20 lg:h-24 w-auto object-contain transition-all duration-300"
             />
           </div>
@@ -233,8 +245,8 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center px-6">
             <button
-              onClick={() => window.open(BOOKING_URL, "_blank", "noopener,noreferrer")}
-              className="cta-btn py-3 px-10 bg-[#b3122e] hover:bg-[#8e0e24] text-white uppercase transition-colors flex items-center justify-center whitespace-nowrap rounded-lg shadow-md"
+              onClick={handleBookingClick}
+              className="cta-btn btn-gold-champagne py-3 px-10 uppercase flex items-center justify-center whitespace-nowrap rounded-lg font-bold"
             >
               Book Now
             </button>
@@ -263,7 +275,7 @@ const Header = () => {
           <div className="bg-black border-b border-white/10 flex items-center justify-between px-4 py-4 min-h-[70px] sm:min-h-[90px] flex-shrink-0">
             <img
               src="/images/logo.png"
-              alt="Smoove Luxury Transportation"
+              alt="Executive Transport MKE"
               className="h-12 sm:h-14 w-auto object-contain"
             />
             <Button
@@ -309,8 +321,8 @@ const Header = () => {
 
             <div className="mt-8">
               <Button
-                className="cta-btn w-full bg-[#b3122e] text-white min-h-[48px] py-4 uppercase rounded-none hover:bg-[#8e0e24]"
-                onClick={() => window.open(BOOKING_URL, "_blank", "noopener,noreferrer")}
+                className="cta-btn btn-gold-champagne w-full min-h-[48px] py-4 uppercase rounded-none font-bold"
+                onClick={handleBookingClick}
               >
                 Book Now
               </Button>

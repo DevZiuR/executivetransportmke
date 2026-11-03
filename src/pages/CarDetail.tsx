@@ -142,14 +142,14 @@ const CarDetail = () => {
                             <div>
                                 <div className="flex flex-wrap items-center gap-3 mb-4">
                                     <span className="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 backdrop-blur-sm text-white text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-sm">
-                                        <MapPin className="w-3 h-3 text-[#b3122e]" /> {car.location}
+                                        <MapPin className="w-3 h-3 text-[#C9A96E]" /> {car.location}
                                     </span>
                                     <span className="inline-flex items-center gap-1.5 bg-green-500/20 border border-green-500/40 text-green-400 text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-sm">
                                         ✓ Available Now
                                     </span>
                                     {car.hot && (
                                         <span className="inline-flex items-center gap-1.5 bg-orange-500/20 border border-orange-500/40 text-orange-400 text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-sm">
-                                            <Flame className="w-3 h-3 text-[#b3122e]" /> Hot Pick
+                                            <Flame className="w-3 h-3 text-[#C9A96E]" /> Hot Pick
                                         </span>
                                     )}
                                 </div>
@@ -177,10 +177,10 @@ const CarDetail = () => {
                         {/* Trust Badges */}
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                             {[
-                                { icon: <Shield className="w-5 h-5 text-[#b3122e]" />, label: "Fully Insured" },
-                                { icon: <Clock className="w-5 h-5 text-[#b3122e]" />, label: "24/7 Support" },
-                                { icon: <Check className="w-5 h-5 text-[#b3122e]" />, label: "No Hidden Fees" },
-                                { icon: <Zap className="w-5 h-5 text-[#b3122e]" />, label: "Instant Booking" },
+                                { icon: <Shield className="w-5 h-5 text-[#C9A96E]" />, label: "Fully Insured" },
+                                { icon: <Clock className="w-5 h-5 text-[#C9A96E]" />, label: "24/7 Support" },
+                                { icon: <Check className="w-5 h-5 text-[#C9A96E]" />, label: "No Hidden Fees" },
+                                { icon: <Zap className="w-5 h-5 text-[#C9A96E]" />, label: "Instant Booking" },
                             ].map(b => (
                                 <div key={b.label} className="flex flex-col items-center justify-center gap-2 border border-white/10 rounded-sm p-4 text-center text-sm font-semibold text-zinc-300 bg-white/5">
                                     <span>{b.icon}</span>
@@ -214,8 +214,8 @@ const CarDetail = () => {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 {car.features.map(f => (
                                     <div key={f} className="flex items-center gap-3 text-zinc-300">
-                                        <span className="w-5 h-5 rounded-full bg-[#b3122e] flex items-center justify-center flex-shrink-0">
-                                            <Check className="w-3 h-3 text-white" />
+                                        <span className="w-5 h-5 rounded-full bg-[#C9A96E] flex items-center justify-center flex-shrink-0">
+                                            <Check className="w-3 h-3 text-[#07070a]" />
                                         </span>
                                         <span className="font-medium">{f}</span>
                                     </div>
@@ -227,7 +227,7 @@ const CarDetail = () => {
                         <div className="bg-[#141416] border border-white/10 text-white p-8 rounded-sm">
                             <div className="flex items-center gap-2 mb-3">
                                 {[...Array(5)].map((_, i) => (
-                                    <Star key={i} className="w-4 h-4 fill-[#b3122e] text-[#b3122e]" />
+                                    <Star key={i} className="w-4 h-4 fill-[#C9A96E] text-[#C9A96E]" />
                                 ))}
                                 <span className="text-white/60 text-sm ml-1">5.0 · 2,500+ Rides</span>
                             </div>
@@ -248,7 +248,7 @@ const CarDetail = () => {
                                     <p className="text-xs uppercase tracking-widest text-zinc-400 mb-1 font-mono">Reserve Your</p>
                                     <h3 className="text-xl font-extrabold leading-tight text-white">{car.title}</h3>
                                     <div className="flex items-baseline gap-2 mt-3">
-                                        <span className="text-4xl font-extrabold text-[#b3122e]">{car.price || "Ask for rate"}</span>
+                                        <span className="text-4xl font-extrabold text-[#C9A96E]">{car.price || "Ask for rate"}</span>
                                         {car.price && <span className="text-zinc-400 text-sm">/ hour</span>}
                                     </div>
                                 </div>
@@ -264,7 +264,7 @@ const CarDetail = () => {
                                             {step === 0 && (
                                                 <div className="space-y-4">
                                                     <div className="flex items-center gap-2 text-white font-extrabold text-sm uppercase tracking-wider mb-4">
-                                                        <CalendarDays className="w-4 h-4 text-[#b3122e]" /> Select Your Date & Duration
+                                                        <CalendarDays className="w-4 h-4 text-[#C9A96E]" /> Select Your Date & Duration
                                                     </div>
                                                     <div>
                                                         <label className="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-1.5 font-mono">Booking Date</label>
@@ -299,10 +299,10 @@ const CarDetail = () => {
                                                         <select value={pickupLocation} onChange={e => setPickupLocation(e.target.value)}
                                                             className="w-full border border-white/20 h-12 min-h-[48px] p-3 text-[16px] font-medium focus:outline-none focus:border-white transition-colors rounded-sm bg-[#1c1c20] text-white">
                                                             <option value="" className="bg-[#1c1c20] text-white">Select area...</option>
-                                                            <option className="bg-[#1c1c20] text-white">New York — NYC / New Jersey</option>
-                                                            <option className="bg-[#1c1c20] text-white">New York — Connecticut / Pennsylvania</option>
-                                                            <option className="bg-[#1c1c20] text-white">Atlanta, GA</option>
-                                                            <option className="bg-[#1c1c20] text-white">Miami, FL</option>
+                                                            <option className="bg-[#1c1c20] text-white">Milwaukee, WI (Metro / Lakefront)</option>
+                                                            <option className="bg-[#1c1c20] text-white">Chicago, IL & Chicagoland</option>
+                                                            <option className="bg-[#1c1c20] text-white">Milwaukee, WI & Surrounding</option>
+                                                            <option className="bg-[#1c1c20] text-white">Madison, WI & Regional</option>
                                                             <option className="bg-[#1c1c20] text-white">Nationwide (all 50 states)</option>
                                                         </select>
                                                     </div>
@@ -310,7 +310,7 @@ const CarDetail = () => {
                                                         <div className="bg-white/5 border border-white/10 rounded-sm p-3 text-sm">
                                                             <span className="text-zinc-400">Duration: </span>
                                                             <span className="font-extrabold text-white">{hours} hour{hours > 1 ? "s" : ""}</span>
-                                                            <span className="text-zinc-500 ml-2">· Base: <strong className="text-[#b3122e]">${basePrice.toLocaleString()}</strong></span>
+                                                            <span className="text-zinc-500 ml-2">· Base: <strong className="text-[#C9A96E]">${basePrice.toLocaleString()}</strong></span>
                                                         </div>
                                                     )}
                                                 </div>
@@ -320,26 +320,26 @@ const CarDetail = () => {
                                             {step === 1 && (
                                                 <div className="space-y-3">
                                                     <div className="flex items-center gap-2 text-white font-extrabold text-sm uppercase tracking-wider mb-4">
-                                                        <Settings2 className="w-4 h-4 text-[#b3122e]" /> Customize Your Experience
+                                                        <Settings2 className="w-4 h-4 text-[#C9A96E]" /> Customize Your Experience
                                                     </div>
                                                     {extras.map(ex => {
                                                         const active = selectedExtras.includes(ex.id);
                                                         return (
                                                             <button key={ex.id} type="button" onClick={() => toggleExtra(ex.id)}
                                                                 className={`w-full flex items-start gap-3 p-3.5 rounded-sm border text-left transition-all duration-200 ${
-                                                                    active ? "border-[#b3122e] bg-[#b3122e]/10 text-white" : "border-white/10 bg-white/5 hover:border-white/25 text-white"
+                                                                    active ? "border-[#C9A96E] bg-[#C9A96E]/10 text-white" : "border-white/10 bg-white/5 hover:border-white/25 text-white"
                                                                 }`}>
-                                                                <span className={`mt-0.5 flex-shrink-0 ${active ? "text-[#b3122e]" : "text-zinc-400"}`}>{ex.icon}</span>
+                                                                <span className={`mt-0.5 flex-shrink-0 ${active ? "text-[#C9A96E]" : "text-zinc-400"}`}>{ex.icon}</span>
                                                                 <div className="flex-1 min-w-0">
                                                                     <p className="font-extrabold text-sm text-white">{ex.label}</p>
                                                                     <p className={`text-xs mt-0.5 ${active ? "text-zinc-300" : "text-zinc-400"}`}>{ex.desc}</p>
                                                                 </div>
                                                                 <div className="flex-shrink-0 text-right">
-                                                                    <p className="font-extrabold text-sm text-[#b3122e]">+${ex.price}</p>
+                                                                    <p className="font-extrabold text-sm text-[#C9A96E]">+${ex.price}</p>
                                                                     <div className={`w-4 h-4 rounded-full border flex items-center justify-center mt-1 ml-auto transition-all ${
-                                                                        active ? "bg-[#b3122e] border-[#b3122e]" : "border-white/30"
+                                                                        active ? "bg-[#C9A96E] border-[#C9A96E]" : "border-white/30"
                                                                     }`}>
-                                                                        {active && <Check className="w-2.5 h-2.5 text-white" />}
+                                                                        {active && <Check className="w-2.5 h-2.5 text-[#07070a]" />}
                                                                     </div>
                                                                 </div>
                                                             </button>
@@ -355,7 +355,7 @@ const CarDetail = () => {
                                             {step === 2 && (
                                                 <div className="space-y-4">
                                                     <div className="flex items-center gap-2 text-white font-extrabold text-sm uppercase tracking-wider mb-4">
-                                                        <User className="w-4 h-4 text-[#b3122e]" /> Your Information
+                                                        <User className="w-4 h-4 text-[#C9A96E]" /> Your Information
                                                     </div>
                                                     {[
                                                         { key: "name", label: "Full Name", type: "text", icon: <User className="w-4 h-4" />, placeholder: "John Smith" },
@@ -381,7 +381,7 @@ const CarDetail = () => {
                                             {step === 3 && (
                                                 <div className="space-y-4">
                                                     <div className="flex items-center gap-2 text-white font-extrabold text-sm uppercase tracking-wider mb-4">
-                                                        <Check className="w-4 h-4 text-[#b3122e]" /> Review & Confirm
+                                                        <Check className="w-4 h-4 text-[#C9A96E]" /> Review & Confirm
                                                     </div>
 
                                                     {/* Summary card */}
@@ -413,7 +413,7 @@ const CarDetail = () => {
                                                                 <p className="text-[10px] uppercase tracking-widest text-zinc-400 font-bold mb-1 font-mono">Add-ons</p>
                                                                 {selectedExtras.map(id => {
                                                                     const ex = EXTRAS.find(x => x.id === id)!;
-                                                                    return <p key={id} className="text-zinc-300">• {ex.label} <span className="text-[#b3122e]">+${ex.price}</span></p>;
+                                                                    return <p key={id} className="text-zinc-300">• {ex.label} <span className="text-[#C9A96E]">+${ex.price}</span></p>;
                                                                 })}
                                                             </div>
                                                         )}
@@ -440,7 +440,7 @@ const CarDetail = () => {
                                                         </div>
                                                         <div className="flex justify-between font-extrabold text-white text-lg border-t border-white/10 pt-2">
                                                             <span>Estimated Total</span>
-                                                            <span className="text-[#b3122e]">${grandTotal.toLocaleString()}*</span>
+                                                            <span className="text-[#C9A96E]">${grandTotal.toLocaleString()}*</span>
                                                         </div>
                                                         <p className="text-[10px] text-zinc-500">*Excluding tolls &amp; applicable fees</p>
                                                     </div>
@@ -458,12 +458,12 @@ const CarDetail = () => {
                                             )}
                                             {step < 3 ? (
                                                 <Button type="button" onClick={goNext} disabled={!canProceed()}
-                                                    className="cta-btn flex-1 bg-[#b3122e] hover:bg-[#8e0e24] disabled:bg-white/10 disabled:text-zinc-500 text-white h-12 uppercase rounded-sm flex items-center justify-center gap-2 transition-all">
+                                                    className="cta-btn btn-gold-champagne flex-1 disabled:bg-white/10 disabled:text-zinc-500 h-12 uppercase rounded-sm flex items-center justify-center gap-2">
                                                     Continue <ChevronRight className="w-4 h-4" />
                                                 </Button>
                                             ) : (
                                                 <Button type="button" onClick={handleSubmit}
-                                                    className="cta-btn flex-1 bg-[#b3122e] hover:bg-[#8e0e24] text-white h-12 uppercase rounded-sm">
+                                                    className="cta-btn btn-gold-champagne flex-1 h-12 uppercase rounded-sm font-bold">
                                                     Confirm Reservation
                                                 </Button>
                                             )}
@@ -486,9 +486,9 @@ const CarDetail = () => {
                                         <div className="bg-white/5 border border-white/10 rounded-sm p-4 text-left text-sm space-y-1.5 text-zinc-300">
                                             <p>📅 <strong>{formatDate(bookingDate)}</strong> at <strong>{startTime || "—"}</strong> · <strong>{hours} hr{hours > 1 ? "s" : ""}</strong></p>
                                             <p>📍 {pickupLocation}</p>
-                                            <p>💰 Est. <strong className="text-[#b3122e]">${grandTotal.toLocaleString()}</strong> (excl. tolls)</p>
+                                            <p>💰 Est. <strong className="text-[#C9A96E]">${grandTotal.toLocaleString()}</strong> (excl. tolls)</p>
                                         </div>
-                                        <a href="https://smooveluxurybooking.as.me/schedule/b24e2156" target="_blank" rel="noopener noreferrer" className="block w-full bg-[#b3122e] text-white font-bold py-3 text-sm uppercase tracking-wider text-center rounded-sm hover:bg-[#8e0e24] transition-colors">
+                                        <a href="/#book" target="_blank" rel="noopener noreferrer" className="cta-btn btn-gold-champagne block w-full font-bold py-3 text-sm uppercase tracking-wider text-center rounded-sm">
                                             Book Online Now
                                         </a>
                                         <button onClick={() => { setSubmitted(false); setStep(0); }} className="text-xs text-zinc-400 underline hover:text-white">
@@ -501,7 +501,7 @@ const CarDetail = () => {
                             {/* Contact nudge */}
                             <div className="mt-4 p-4 bg-white/5 border border-white/10 rounded-sm text-sm text-zinc-300 text-center">
                                 Questions? Book online at{" "}
-                                <a href="https://smooveluxurybooking.as.me/schedule/b24e2156" target="_blank" rel="noopener noreferrer" className="font-bold text-white hover:text-[#b3122e] hover:underline">smooveluxurybooking.as.me</a>
+                                <a href="/#book" className="font-bold text-white hover:text-[#C9A96E] hover:underline">Reserve Online</a>
                             </div>
                         </div>
                     </div>
@@ -519,7 +519,7 @@ const CarDetail = () => {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {related.map(rc => (
                                 <div key={rc.id} onClick={() => navigate(`/fleet/${rc.slug}`)}
-                                    className="group border border-neutral-800 hover:border-[#b3122e]/50 hover:shadow-xl transition-all duration-300 cursor-pointer bg-[#141416] overflow-hidden rounded-sm">
+                                    className="group border border-neutral-800 hover:border-[#C9A96E]/50 hover:shadow-xl transition-all duration-300 cursor-pointer bg-[#141416] overflow-hidden rounded-sm">
                                     <div className="relative aspect-[4/3] overflow-hidden bg-neutral-900">
                                         {rc.image ? (
                                             <img src={rc.image} alt={rc.title}
@@ -538,9 +538,9 @@ const CarDetail = () => {
                                     <div className="p-4 flex justify-between items-center">
                                         <div>
                                             <p className="text-[11px] uppercase tracking-wider text-zinc-400 font-bold font-mono">Price/Hour</p>
-                                            <p className="text-2xl font-extrabold text-[#b3122e]">{rc.price || "Ask for rate"}</p>
+                                            <p className="text-2xl font-extrabold text-[#C9A96E]">{rc.price || "Ask for rate"}</p>
                                         </div>
-                                        <Button className="bg-[#b3122e] hover:bg-[#8e0e24] text-white text-xs font-bold px-4 h-9 rounded-sm uppercase tracking-wider">
+                                        <Button className="bg-[#C9A96E] hover:bg-[#D8BC85] text-[#07070a] text-xs font-bold px-4 h-9 rounded-sm uppercase tracking-wider">
                                             View
                                         </Button>
                                     </div>

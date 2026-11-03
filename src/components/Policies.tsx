@@ -1,12 +1,13 @@
 import {
   CircleDollarSign,
-  Laptop,
   Car,
   Cigarette,
   Clock,
   CalendarX2,
-  Sparkles
+  UserX,
+  MapPin,
 } from "lucide-react";
+import { BOOKING_URL } from "@/components/Header";
 import { RevealOnScroll, StaggerContainer, StaggerItem } from "./RevealOnScroll";
 
 interface PolicyItem {
@@ -18,69 +19,90 @@ interface PolicyItem {
 
 const policies: PolicyItem[] = [
   {
-    id: "deposit",
-    icon: <CircleDollarSign className="w-7 h-7 text-[#b3122e]" />,
-    title: "50% Deposit & Accepted Payments",
+    id: "wait-time",
+    icon: <Clock className="w-6 h-6 text-[#C9A96E]" />,
+    title: "Wait Time Policy",
     content: (
-      <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-        A <span className="text-white font-bold">50% non-refundable deposit</span> is required to secure your reservation.
-        The remaining balance must be paid no later than <span className="text-white font-semibold">5 hours prior</span> to your scheduled pickup time.
-        <span className="block mt-2 font-semibold text-white">Accepted payment methods include Zelle, Apple Pay, and Cash App only.</span>
+      <div className="space-y-1.5 text-gray-300 text-sm leading-relaxed">
+        <p>
+          <span className="text-white font-medium">First 15 minutes:</span> Complimentary
+        </p>
+        <p>
+          <span className="text-white font-medium">After 15 minutes:</span> $2.00 per minute
+        </p>
+      </div>
+    ),
+  },
+  {
+    id: "deposit-acknowledgment",
+    icon: <CircleDollarSign className="w-6 h-6 text-[#C9A96E]" />,
+    title: "Deposit & Acknowledgment",
+    content: (
+      <p className="text-gray-300 text-sm leading-relaxed">
+        Payment of the required deposit constitutes full agreement to all booking terms and policies outlined in your confirmation email for your scheduled transportation.
       </p>
     ),
   },
   {
-    id: "expedited",
-    icon: <Laptop className="w-7 h-7 text-[#b3122e]" />,
-    title: "Expedited & Cash Handling Fees",
+    id: "ride-details",
+    icon: <Car className="w-6 h-6 text-[#C9A96E]" />,
+    title: "Ride Details",
     content: (
-      <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-        Reservations made <span className="text-white font-semibold">within 24 hours</span> of the scheduled pickup will incur a <span className="text-white font-bold">$20 expedited booking fee</span>.
-        For bookings requiring the business owner to collect cash in person, an additional <span className="text-white font-bold">$20 handling fee</span> will be applied.
+      <div className="space-y-2 text-gray-300 text-sm leading-relaxed">
+        <p>
+          <span className="text-white font-medium">Extra Passengers:</span> Subject to capacity and an additional passenger fee.
+        </p>
+        <p>
+          <span className="text-white font-medium">Modifications:</span> Services cannot be shortened or changed once the trip begins.
+        </p>
+        <p>
+          <span className="text-white font-medium">Round Trips:</span> No refunds for unused return legs once the ride starts.
+        </p>
+      </div>
+    ),
+  },
+  {
+    id: "cancellations",
+    icon: <CalendarX2 className="w-6 h-6 text-[#C9A96E]" />,
+    title: "Cancellations",
+    content: (
+      <div className="space-y-1.5 text-gray-300 text-sm leading-relaxed">
+        <p>
+          <span className="text-white font-medium">More than 24 hours:</span> Deposit transferable to a future booking.
+        </p>
+        <p>
+          <span className="text-white font-medium">Less than 24 hours:</span> Deposit is non-refundable.
+        </p>
+      </div>
+    ),
+  },
+  {
+    id: "no-shows",
+    icon: <UserX className="w-6 h-6 text-[#C9A96E]" />,
+    title: "No Shows",
+    content: (
+      <p className="text-gray-300 text-sm leading-relaxed">
+        Failure to arrive within the scheduled pickup window without communication results in immediate cancellation and forfeiture of payment, including round-trip reservations.
       </p>
     ),
   },
   {
-    id: "tolls",
-    icon: <Car className="w-7 h-7 text-[#b3122e]" />,
-    title: "NYC Congestion & State Line Tolls",
+    id: "additional-stops",
+    icon: <MapPin className="w-6 h-6 text-[#C9A96E]" />,
+    title: "Additional Stops",
     content: (
-      <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-        Trips that involve travel to or through New York City will include a <span className="text-white font-bold">$9 congestion/toll surcharge</span>.
-        Long-distance travel or trips across state lines will be assessed an <span className="text-white font-semibold">additional mileage and toll fee</span>, discussed at the time of booking.
+      <p className="text-gray-300 text-sm leading-relaxed">
+        Additional stops must be requested in advance. Any in-ride route extensions or extra stops are subject to driver availability and additional charges.
       </p>
     ),
   },
   {
     id: "smoking",
-    icon: <Cigarette className="w-7 h-7 text-[#b3122e]" />,
-    title: "Smoking Policy ($180 Fee)",
+    icon: <Cigarette className="w-6 h-6 text-[#C9A96E]" />,
+    title: "Smoking Policy",
     content: (
-      <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-        Smoking is permitted inside the vehicle <span className="text-white font-semibold">upon request</span> and will incur a <span className="text-white font-bold">$180 smoking fee</span>.
-        This fee covers mandatory deep cleaning and air sanitization to maintain the vehicle's pristine luxury standards.
-      </p>
-    ),
-  },
-  {
-    id: "time",
-    icon: <Clock className="w-7 h-7 text-[#b3122e]" />,
-    title: "Time-Based Bookings & Delays",
-    content: (
-      <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-        <span className="text-white font-bold">All bookings are time-based.</span> If your trip exceeds the reserved time, an additional hour will automatically be charged.
-        Please allow for traffic delays when scheduling your reservation, as time cannot be adjusted due to unforeseen congestion.
-      </p>
-    ),
-  },
-  {
-    id: "cancellation",
-    icon: <CalendarX2 className="w-7 h-7 text-[#b3122e]" />,
-    title: "Cancellations & Deposit Credits",
-    content: (
-      <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-        Deposits are non-refundable but may be <span className="text-white font-semibold">credited toward a future booking</span> if advance notice is provided.
-        Last-minute cancellations or failure to remit final payment on time will result in <span className="text-white font-bold">forfeiture of the deposit</span>.
+      <p className="text-gray-300 text-sm leading-relaxed">
+        Smoking is only permitted for guests who book the Smoker's Lounge Ride package. Excessive ash, burns, or spills will incur an additional cleaning or detailing fee.
       </p>
     ),
   },
@@ -88,60 +110,72 @@ const policies: PolicyItem[] = [
 
 const Policies = () => {
   return (
-    <section id="policies" className="py-20 md:py-32 bg-black text-white overflow-hidden relative">
+    <section id="policies" className="py-20 md:py-28 bg-black text-white overflow-hidden relative">
 
       {/* Background ambient glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#b3122e]/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#C9A96E]/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Section Header (Follows the section divider) */}
+        {/* Section Header */}
         <RevealOnScroll isHeading>
-          <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 md:mb-20">
-
+          <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-14 md:mb-16">
+            <span className="text-xs font-bold tracking-[0.25em] text-[#C9A96E] uppercase block font-mono mb-3">
+              GUIDELINES &amp; TERMS
+            </span>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white uppercase tracking-wide leading-tight">
-              Policies &amp; Booking Guidelines
+              Important Policies
             </h2>
 
-            <div className="w-16 h-[2px] bg-[#b3122e] mt-6" />
+            <div className="w-16 h-[2px] bg-[#C9A96E] mt-5" />
           </div>
         </RevealOnScroll>
 
-        {/* Policies Grid with Luxury Sequential Stagger */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {policies.map((policy) => (
-            <StaggerItem key={policy.id} className="h-full">
-              <div
-                className="group relative bg-[#0b0b0b] border border-white/10 rounded-2xl p-7 sm:p-9 transition-all duration-300 hover:border-white/30 hover:bg-[#111111] hover:shadow-2xl hover:-translate-y-1 flex flex-col h-full"
+        {/* Policies Grid with Centered Last Item */}
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch">
+          {policies.map((policy, index) => {
+            const isLast = index === policies.length - 1;
+            return (
+              <StaggerItem
+                key={policy.id}
+                className={`h-full ${
+                  isLast
+                    ? "md:col-span-2 md:max-w-md md:mx-auto lg:col-span-1 lg:col-start-2 lg:max-w-none w-full"
+                    : ""
+                }`}
               >
-                <div className="flex items-center gap-4 mb-5">
-                  <div className="w-14 h-14 rounded-2xl bg-black flex items-center justify-center flex-shrink-0 transition-all duration-300">
-                    {policy.icon}
+                <div
+                  className="group relative bg-[#0b0b0b] border border-white/10 rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:border-white/30 hover:bg-[#111111] hover:shadow-2xl hover:-translate-y-1 flex flex-col h-full"
+                >
+                  <div className="flex items-center gap-3.5 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-black border border-white/10 flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:border-[#C9A96E]/40">
+                      {policy.icon}
+                    </div>
+                    <h3 className="text-base sm:text-lg font-bold font-onest text-white tracking-tight leading-snug">
+                      {policy.title}
+                    </h3>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold font-onest text-white tracking-tight leading-snug">
-                    {policy.title}
-                  </h3>
-                </div>
 
-                <div className="pl-0 sm:pl-2">
-                  {policy.content}
+                  <div className="pt-1">
+                    {policy.content}
+                  </div>
                 </div>
-              </div>
-            </StaggerItem>
-          ))}
+              </StaggerItem>
+            );
+          })}
         </StaggerContainer>
 
         {/* Note / Disclaimer */}
-        <RevealOnScroll delay={250} className="mt-14 max-w-3xl mx-auto text-center pt-4">
+        <RevealOnScroll delay={250} className="mt-12 max-w-3xl mx-auto text-center pt-2">
           <p className="text-xs sm:text-sm text-gray-400 font-sans leading-relaxed">
             Please review all policies prior to booking. For special inquiries, custom routes, or corporate arrangements,
             feel free to reach out to our team at{" "}
             <a
-              href="https://smooveluxurybooking.as.me/schedule/b24e2156"
+              href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white underline hover:text-[#b3122e] transition-colors"
+              className="text-white underline hover:text-[#C9A96E] transition-colors"
             >
               our scheduling portal
             </a>.

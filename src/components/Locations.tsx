@@ -79,7 +79,7 @@ const Locations = () => {
                         <RevealOnScroll animation="fade-in" className="order-2 lg:order-1">
                             <div className="relative rounded-sm overflow-hidden border border-gray-200 shadow-lg h-[450px] md:h-[550px]">
                                 <iframe
-                                    src="https://maps.google.com/maps?q=Brooklyn%2C%20New%20York&t=&z=10&ie=UTF8&iwloc=&output=embed"
+                                    src="https://maps.google.com/maps?q=Milwaukee%2C%20Wisconsin&t=&z=10&ie=UTF8&iwloc=&output=embed"
                                     width="100%"
                                     height="100%"
                                     style={{ border: 0, filter: "grayscale(0.2) contrast(1.1)" }}
@@ -107,12 +107,11 @@ const Locations = () => {
                                     SERVICE AREAS
                                 </span>
                                 <h2 className="text-4xl md:text-5xl lg:text-5xl font-normal text-gray-900 leading-tight tracking-tight">
-                                    Serving the Tri-State <br />
+                                    Serving Milwaukee <br />
                                     &amp; Beyond
                                 </h2>
                                 <p className="text-gray-600 text-lg leading-relaxed max-w-lg">
-                                    Smoove Luxury Transportation brings premium chauffeurs and luxury vehicles right to your door. Whether you're in
-                                    <span className="font-bold"> New York, New Jersey, Pennsylvania, Connecticut, Atlanta, or Miami</span> — or anywhere across all 50 states + countries — we've got you covered.
+                                    Executive Transport MKE proudly serves Milwaukee and surrounding communities, including Brookfield, Wauwatosa, Franklin, Oak Creek, Greenfield, Mequon, Madison, Chicago, Detroit, Indiana, and other destinations by request.
                                 </p>
                             </div>
 
@@ -123,7 +122,7 @@ const Locations = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-gray-900 mb-1">Headquarters</h4>
-                                        <p className="text-gray-600">Brooklyn, NY</p>
+                                        <p className="text-gray-600">Milwaukee, WI</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start space-x-4 p-4 bg-gray-50 border border-gray-100">
@@ -131,8 +130,8 @@ const Locations = () => {
                                         <ChevronRight className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-gray-900 mb-1">Additional Areas</h4>
-                                        <p className="text-gray-600">NY &nbsp;•&nbsp; NJ &nbsp;•&nbsp; PA &nbsp;•&nbsp; CT &nbsp;•&nbsp; Atlanta, GA &nbsp;•&nbsp; Miami, FL &nbsp;•&nbsp; All 50 States</p>
+                                        <h4 className="font-bold text-gray-900 mb-1">Service Communities</h4>
+                                        <p className="text-gray-600">Milwaukee &nbsp;•&nbsp; Brookfield &nbsp;•&nbsp; Wauwatosa &nbsp;•&nbsp; Franklin &nbsp;•&nbsp; Oak Creek &nbsp;•&nbsp; Greenfield &nbsp;•&nbsp; Mequon &nbsp;•&nbsp; Madison &nbsp;•&nbsp; Chicago &nbsp;•&nbsp; Detroit &nbsp;•&nbsp; Indiana</p>
                                     </div>
                                 </div>
                             </div>

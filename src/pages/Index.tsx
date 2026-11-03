@@ -6,7 +6,7 @@ import Gallery from "@/components/Gallery";
 import Policies from "@/components/Policies";
 import Photoshoots from "@/components/Photoshoots";
 import EmergencyCall from "@/components/EmergencyCall";
-import Reviews from "@/components/Reviews";
+// import Reviews from "@/components/Reviews";
 import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
 import PreFooterCTA from "@/components/PreFooterCTA";
@@ -24,7 +24,7 @@ const Index = () => {
         <Policies />
         <Photoshoots />
         <EmergencyCall />
-        <Reviews />
+        {/* <Reviews /> — Hidden until client reviews are ready */}
         <Contact />
         <FAQ />
         <PreFooterCTA />

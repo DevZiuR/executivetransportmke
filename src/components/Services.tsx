@@ -3,16 +3,16 @@ import { ArrowUpRight, Search, Wine, Sparkles, Users, Flame, Clock, CalendarChec
 import RevealOnScroll from "@/components/RevealOnScroll";
 import { bookingServices, bookingAddons } from "@/data/bookingServices";
 
-type CategoryFilter = "all" | "tristate" | "exotics" | "sprinters" | "photoshoots" | "atlanta" | "miami";
+type CategoryFilter = "all" | "chauffeur" | "exotics" | "sprinters" | "photoshoots" | "chicago" | "madison";
 
 const categoryTabs: { key: CategoryFilter; label: string }[] = [
   { key: "all", label: "All Services" },
-  { key: "tristate", label: "Tri-State Chauffeur" },
+  { key: "chauffeur", label: "Executive Chauffeur" },
   { key: "exotics", label: "Rolls-Royce & Maybach" },
   { key: "sprinters", label: "Sprinter Vans" },
   { key: "photoshoots", label: "Photoshoots & Media" },
-  { key: "atlanta", label: "Atlanta Fleet" },
-  { key: "miami", label: "Miami Packages" },
+  { key: "chicago", label: "Chicago Transfers" },
+  { key: "madison", label: "Madison Packages" },
 ];
 
 const addonIcons: Record<number, any> = {
@@ -236,7 +236,7 @@ const Services = () => {
               All appointments include a professional uniformed chauffeur, fuel, and complimentary bottled water.
             </p>
             <button
-              onClick={() => window.open("https://smooveluxurybooking.as.me/schedule/b24e2156", "_blank", "noopener,noreferrer")}
+              onClick={() => { const el = document.getElementById("book"); if (el) { el.scrollIntoView({ behavior: "smooth" }); } else { window.location.href = "/#book"; } }}
               className="cta-btn flex-shrink-0 px-6 py-3 bg-white text-black uppercase rounded-sm hover:bg-gray-200 transition-colors flex items-center gap-2"
             >
               Open Full Schedule <ArrowUpRight className="w-4 h-4" />

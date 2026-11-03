@@ -16,12 +16,12 @@ export default {
       fontFamily: {
         'sans': ['"Inter"', 'sans-serif'],
         'inter': ['"Inter"', 'sans-serif'],
-        'heading': ['"Fjalla One"', 'sans-serif'],
-        'fjalla': ['"Fjalla One"', 'sans-serif'],
-        'cta': ['"Fjalla One"', 'sans-serif'],
-        'serif': ['"Fjalla One"', 'sans-serif'],
-        'playfair': ['"Fjalla One"', 'sans-serif'],
-        'montserrat': ['"Fjalla One"', 'sans-serif'],
+        'heading': ['"Playfair Display"', 'Georgia', 'serif'],
+        'playfair': ['"Playfair Display"', 'Georgia', 'serif'],
+        'serif': ['"Playfair Display"', 'Georgia', 'serif'],
+        'fjalla': ['"Playfair Display"', 'Georgia', 'serif'],
+        'montserrat': ['"Playfair Display"', 'Georgia', 'serif'],
+        'cta': ['"Playfair Display"', 'Georgia', 'serif'],
         'onest': ['"Inter"', 'sans-serif'],
       },
       colors: {

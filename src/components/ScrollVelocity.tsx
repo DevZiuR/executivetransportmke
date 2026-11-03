@@ -172,7 +172,7 @@ export const ScrollVelocity = ({
                                 {text}
                             </span>
                             <span
-                                className="crimson-star-solid ml-6 md:ml-10 select-none text-[clamp(1.2rem,2.2vw,2rem)] leading-none"
+                                className="gold-star-solid ml-6 md:ml-10 select-none text-[clamp(1.2rem,2.2vw,2rem)] leading-none"
                                 aria-hidden="true"
                             >
                                 ★

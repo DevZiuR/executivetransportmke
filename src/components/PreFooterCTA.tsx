@@ -10,7 +10,7 @@ const PreFooterCTA = () => {
                     {/* Image */}
                     <img
                         src="/images/herov2.png"
-                        alt="Smoove Luxury Transportation"
+                        alt="Executive Transport MKE"
                         loading="lazy"
                         className="absolute inset-0 w-full h-full object-cover object-[54%_35%]"
                     />
@@ -22,15 +22,13 @@ const PreFooterCTA = () => {
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
                         <RevealOnScroll isHeading className="flex flex-col items-center">
                             <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-[76px] text-white font-serif leading-tight mb-8 drop-shadow-lg">
-                                Your Ride,<br />
-                                <span className="italic">Under the Stars.</span>
+                                YOUR RIDE.<br />
+                                <span className="italic">YOUR NIGHT.</span>
                             </h2>
 
                             <a
-                                href="https://smooveluxurybooking.as.me/schedule/b24e2156"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="cta-btn inline-flex items-center justify-center gap-2 bg-[#b3122e] hover:bg-[#8e0e24] text-white px-8 py-4 min-h-[48px] rounded-full uppercase transition-all duration-300 transform hover:scale-105 shadow-xl"
+                                href="#book"
+                                className="cta-btn btn-gold-champagne inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[48px] rounded-full uppercase font-bold"
                             >
                                 Book Your Ride
                                 <ArrowUpRight className="w-4 h-4" />

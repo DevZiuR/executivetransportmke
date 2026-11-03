@@ -44,7 +44,7 @@ const Reviews = () => {
             <div>
               <div className="flex items-center gap-1.5 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-[#b3122e] text-[#b3122e]" />
+                  <Star key={i} className="w-5 h-5 fill-[#C9A96E] text-[#C9A96E]" />
                 ))}
               </div>
 
@@ -104,12 +104,12 @@ const Reviews = () => {
         {/* Bottom CTA */}
         <RevealOnScroll delay={250} className="mt-16 text-center">
           <a
-            href="https://instagram.com/smooveluxurytransportation"
+            href="https://instagram.com/executivetransportmke"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-[0.2em] rounded-sm transition-all duration-300 hover:border-white"
           >
-            <Instagram className="w-4 h-4 text-[#b3122e]" />
+            <Instagram className="w-4 h-4 text-[#C9A96E]" />
             Follow us on Instagram
           </a>
         </RevealOnScroll>

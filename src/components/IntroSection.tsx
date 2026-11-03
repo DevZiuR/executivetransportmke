@@ -38,8 +38,8 @@ const IntroSection = () => {
                 }
           }
         >
-          {/* Eyebrow: 12px, letter-spacing 0.3em, crimson #b3122e */}
-          <span className="text-[12px] tracking-[0.3em] text-[#b3122e] uppercase font-mono font-bold mb-6 sm:mb-8 block">
+          {/* Eyebrow: 12px, letter-spacing 0.3em, gold #C9A96E */}
+          <span className="text-[12px] tracking-[0.3em] text-[#C9A96E] uppercase font-mono font-bold mb-6 sm:mb-8 block">
             PREMIUM CHAUFFEURS
           </span>
 
@@ -53,7 +53,7 @@ const IntroSection = () => {
 
           {/* Subline: body #5b5b63, 18px, max-width 560px, centered */}
           <p className="text-[18px] text-[#5b5b63] font-sans leading-relaxed max-w-[560px] mx-auto text-center">
-            Airport transfers, nights out, events and photoshoots. Chauffeured by the hour in the Tri-State, Atlanta and Miami.
+            Airport transfers, nights out, events and photoshoots. Chauffeured by the hour in Milwaukee, Madison, and Chicago.
           </p>
         </motion.div>
       </div>

@@ -44,13 +44,13 @@ const Fleet = () => {
                     {/* Sidebar */}
                     <aside className="w-full lg:w-64 flex-shrink-0">
                         <div className="mb-4">
-                            <div className="inline-flex items-center gap-2 bg-[#b3122e] text-white px-3 py-1 text-sm font-medium rounded-sm mb-4">
+                            <div className="inline-flex items-center gap-2 bg-[#C9A96E] text-[#07070a] px-3 py-1 text-sm font-medium rounded-sm mb-4">
                                 Available
                                 <button className="hover:text-gray-200">✕</button>
                             </div>
                             <div className="flex justify-between items-center text-sm border-b border-white/10 pb-4">
                                 <span className="font-medium text-zinc-300">1 applied</span>
-                                <button className="text-[#b3122e] font-medium hover:underline">[Clear]</button>
+                                <button className="text-[#C9A96E] font-medium hover:underline">[Clear]</button>
                             </div>
                         </div>
 
@@ -73,16 +73,16 @@ const Fleet = () => {
                             <p className="text-sm">• All vehicles are <span className="font-bold text-white">chauffeur-driven</span> — no self-drive rentals.</p>
                         </div>
 
-                        {["New York", "Miami", "Atlanta", "Nationwide"].map((city, index) => (
+                        {["Milwaukee", "Madison", "Chicago", "Nationwide"].map((city, index) => (
                             <div
                                 key={city}
                                 className={index > 0 ? "mt-12" : ""}
                                 ref={el => { cityRefs.current[city] = el; }}
                             >
-                                <h2 className={`text-4xl font-bold mb-6 border-b border-white/10 pb-2 transition-colors ${selectedCity === city ? "text-white border-[#b3122e]" : "text-white"}`}>
+                                <h2 className={`text-4xl font-bold mb-6 border-b border-white/10 pb-2 transition-colors ${selectedCity === city ? "text-white border-[#C9A96E]" : "text-white"}`}>
                                     {city} Inventory
                                     {selectedCity === city && (
-                                        <span className="ml-3 text-sm font-semibold bg-[#b3122e] text-white px-2 py-0.5 rounded-sm uppercase tracking-wider align-middle">Selected</span>
+                                        <span className="ml-3 text-sm font-semibold bg-[#C9A96E] text-[#07070a] px-2 py-0.5 rounded-sm uppercase tracking-wider align-middle">Selected</span>
                                     )}
                                 </h2>
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -104,13 +104,13 @@ const Fleet = () => {
 
                                                     {/* Location Badge */}
                                                     <div className="absolute top-3.5 left-3.5 flex items-center gap-1 bg-black/75 backdrop-blur-md px-2.5 py-1 rounded-md border border-white/10 text-[11px] font-bold uppercase tracking-wider text-white">
-                                                        <MapPin className="w-3 h-3 text-[#b3122e]" />
-                                                        <span>{car.location === "New York" ? "Tri-State" : car.location}</span>
+                                                        <MapPin className="w-3 h-3 text-[#C9A96E]" />
+                                                        <span>{car.location}</span>
                                                     </div>
 
                                                     {car.hot && (
                                                         <div className="absolute top-3.5 right-3.5 bg-black/75 backdrop-blur-md text-white border border-white/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider rounded-md flex items-center gap-1 shadow-sm">
-                                                            <Flame className="w-3 h-3 text-[#b3122e]" />
+                                                            <Flame className="w-3 h-3 text-[#C9A96E]" />
                                                             Hot
                                                         </div>
                                                     )}
@@ -130,7 +130,7 @@ const Fleet = () => {
                                                         <div>
                                                             {car.price ? (
                                                                 <div className="text-lg font-bold text-white">
-                                                                    <span className="text-[#b3122e]">{car.price}</span>
+                                                                    <span className="text-[#C9A96E]">{car.price}</span>
                                                                     <span className="text-xs text-zinc-400 font-normal">/hr</span>
                                                                 </div>
                                                             ) : (
@@ -139,14 +139,10 @@ const Fleet = () => {
                                                         </div>
 
                                                         <Button
-                                                            className="cta-btn px-4 py-2.5 min-h-[44px] bg-[#b3122e] hover:bg-[#8e0e24] text-white uppercase rounded-lg transition-all duration-300 flex items-center gap-1.5 shadow-md flex-shrink-0 h-auto"
+                                                            className="cta-btn btn-gold-champagne px-4 py-2.5 min-h-[44px] uppercase rounded-lg flex items-center gap-1.5 flex-shrink-0 h-auto font-bold"
                                                             onClick={e => {
                                                                 e.stopPropagation();
-                                                                if (!car.price || car.bookingUrl === "#contact") {
-                                                                    navigate("/#contact");
-                                                                } else {
-                                                                    window.open(car.bookingUrl || "https://smooveluxurybooking.as.me/schedule/b24e2156", "_blank", "noopener,noreferrer");
-                                                                }
+                                                                navigate("/#book");
                                                             }}
                                                         >
                                                             <span>{car.price ? "Book Now" : "Ask for Rate"}</span>

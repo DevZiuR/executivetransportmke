@@ -6,7 +6,7 @@ import RevealOnScroll from "./RevealOnScroll";
 gsap.registerPlugin(ScrollTrigger);
 
 const ABOUT_TEXT =
-  "We built Smoove around the arrival. Galaxy-roof Escalades, Maybachs, Rolls-Royces and Sprinters, driven by professional chauffeurs, for airport transfers, nights out, events and photoshoots.";
+  "We built Executive Transport MKE around the arrival. Premium chauffeured black SUV service for airport transfers, date nights and special events across Milwaukee.";
 
 const WORDS = ABOUT_TEXT.split(" ");
 
@@ -40,7 +40,7 @@ const About = () => {
 
       gsap.fromTo(
         words,
-        { opacity: 0.15 },
+        { opacity: 0.18 },
         {
           opacity: 1,
           stagger: 0.08,
@@ -76,14 +76,14 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative bg-[#faf8f5] text-[#0b0b0e] py-10 sm:py-12 md:py-14 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-black/[0.05]"
+      className="relative bg-black text-white py-16 md:py-[120px] px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-white/10"
     >
-      <div className="container mx-auto max-w-4xl flex flex-col items-center text-center">
+      <div className="w-full max-w-[1400px] mx-auto flex flex-col items-center text-center">
         {/* Pill Badge */}
         <RevealOnScroll className="flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/[0.08] shadow-[0_2px_8px_rgba(0,0,0,0.03)] mb-4 sm:mb-5">
-            <span className="text-[#b3122e] text-xs font-bold leading-none select-none" aria-hidden="true">✱</span>
-            <span className="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#0b0b0e]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 shadow-sm mb-6 sm:mb-8">
+            <span className="text-[#C9A96E] text-xs font-bold leading-none select-none" aria-hidden="true">✱</span>
+            <span className="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-[0.2em] text-white/80">
               ABOUT US
             </span>
           </div>
@@ -92,13 +92,13 @@ const About = () => {
         {/* Large Editorial Statement with Scroll-Driven Word Reveal */}
         <p
           ref={paragraphRef}
-          className="about-statement text-[28px] sm:text-3xl md:text-4xl lg:text-[44px] xl:text-[48px] font-normal leading-[1.24] sm:leading-[1.2] md:leading-[1.22] tracking-[-0.015em] text-center max-w-4xl mx-auto text-[#0b0b0e] break-words"
+          className="about-statement text-center max-w-[1400px] mx-auto text-white break-words"
         >
           {WORDS.map((word, index) => (
             <React.Fragment key={index}>
               <span
                 className="about-word inline-block"
-                style={{ opacity: reducedMotion ? 1 : 0.15 }}
+                style={{ opacity: reducedMotion ? 1 : 0.18 }}
               >
                 {word}
               </span>

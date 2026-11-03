@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* High Performance Detail Design System - Luxury Automotive Theme
-All colors MUST be HSL. Red and black premium automotive aesthetic.
+All colors MUST be HSL. Gold and black premium automotive aesthetic.
 */
 
 @layer base {
@@ -24,14 +24,14 @@ All colors MUST be HSL. Red and black premium automotive aesthetic.
     --primary-glow: 209 100% 60%;
     /* Lighter blue variant for effects */
 
-    /* Secondary (Red Accent) */
-    --secondary: 358 83% 52%;
-    /* #EB1C24 */
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary (Champagne Gold Accent) */
+    --secondary: 39 46% 61%;
+    /* #C9A96E */
+    --secondary-foreground: 240 18% 3.5%;
 
-    /* Accent Colors (Red) */
-    --accent: 358 83% 52%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent Colors (Champagne Gold) */
+    --accent: 39 46% 61%;
+    --accent-foreground: 240 18% 3.5%;
 
     /* Card & Surface Colors */
     --card: 0 0% 100%;
@@ -44,8 +44,8 @@ All colors MUST be HSL. Red and black premium automotive aesthetic.
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --destructive: 358 83% 52%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 39 46% 61%;
+    --destructive-foreground: 240 18% 3.5%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
@@ -108,7 +108,8 @@ All colors MUST be HSL. Red and black premium automotive aesthetic.
   .font-heading,
   .heading-font {
     @apply uppercase;
-    font-family: "Fjalla One", sans-serif !important;
+    font-family: "Playfair Display", Georgia, serif !important;
+    font-weight: 600;
   }
 
   p,
@@ -154,10 +155,42 @@ button.cta-btn {
   letter-spacing: 1.5px !important;
 }
 
+/* Primary Gold CTA Button (Matches Reference) */
+.btn-gold-champagne {
+  background: linear-gradient(180deg, #D9B25A 0%, #CDA349 50%, #BD9238 100%) !important;
+  color: #080602 !important;
+  border: 1px solid rgba(245, 222, 165, 0.4) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 240, 195, 0.45), 0 6px 20px rgba(189, 146, 56, 0.25) !important;
+  transition: transform 200ms ease, filter 200ms ease, box-shadow 200ms ease !important;
+}
+
+.btn-gold-champagne:hover {
+  filter: brightness(1.07) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 245, 210, 0.55), 0 8px 24px rgba(200, 155, 60, 0.35) !important;
+}
+
+.btn-gold-champagne:disabled {
+  opacity: 0.6;
+  filter: none !important;
+  transform: none !important;
+  cursor: not-allowed;
+}
+
 /* About Statement Editorial Styling */
 .about-statement {
-  font-family: Georgia, "Times New Roman", serif !important;
+  font-family: "Playfair Display", Georgia, serif !important;
+  font-weight: 400 !important;
   text-transform: none !important;
+  letter-spacing: 0 !important;
+  line-height: 1.2 !important;
+  font-size: 26px;
+}
+
+@media (min-width: 768px) {
+  .about-statement {
+    font-size: clamp(30px, 3.4vw, 54px) !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -173,9 +206,9 @@ button.cta-btn {
   -webkit-text-stroke: 1px #c0c0c0 !important;
 }
 
-.crimson-star-solid {
-  color: #b3122e !important;
-  -webkit-text-fill-color: #b3122e !important;
+.gold-star-solid {
+  color: #C9A96E !important;
+  -webkit-text-fill-color: #C9A96E !important;
   -webkit-text-stroke: 0px transparent !important;
 }
 
@@ -262,7 +295,7 @@ button.cta-btn {
 .section-divider-bar {
   height: 1px;
   width: 100%;
-  background: linear-gradient(90deg, #DC143C 0%, #C0C0C0 100%);
+  background: linear-gradient(90deg, #C9A96E 0%, #C0C0C0 100%);
   transform-origin: left;
   transform: scaleX(1);
 }
@@ -280,7 +313,7 @@ button.cta-btn {
 /* Hero Starlight Shimmer */
 .hero-star-twinkle {
   animation: heroStarTwinkle infinite ease-in-out;
-  box-shadow: 0 0 3px rgba(255, 255, 255, 0.8), 0 0 6px rgba(214, 110, 136, 0.4);
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.8), 0 0 6px rgba(201, 169, 110, 0.4);
 }
 
 @keyframes heroStarTwinkle {
@@ -300,7 +333,7 @@ button.cta-btn {
     transparent 0%,
     transparent 40%,
     rgba(255, 255, 255, 0.035) 48%,
-    rgba(214, 110, 136, 0.07) 50%,
+    rgba(201, 169, 110, 0.07) 50%,
     rgba(255, 255, 255, 0.035) 52%,
     transparent 60%,
     transparent 100%
