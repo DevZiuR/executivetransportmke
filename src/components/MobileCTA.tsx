@@ -15,6 +15,15 @@ const MobileCTA = () => {
         }
     };
 
+    const handleServicesClick = () => {
+        const el = document.getElementById("fleet");
+        if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+        } else {
+            navigate("/fleet");
+        }
+    };
+
     return (
         <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden flex h-16 bg-black shadow-[0_-1px_0_rgba(255,255,255,0.1)]">
             <Button
@@ -24,10 +33,10 @@ const MobileCTA = () => {
                 Book Now
             </Button>
             <Button
-                onClick={() => navigate("/fleet")}
+                onClick={handleServicesClick}
                 className="cta-btn flex-1 bg-black hover:bg-gray-900 text-white uppercase h-full rounded-none"
             >
-                View Fleet
+                View Services
             </Button>
         </div>
     );
